@@ -19,22 +19,19 @@ window.onload = function () {
 // Create, append (and remove) script element to get quotes (JSONP)
 function getQuotes() {
     var req = new XMLHttpRequest();
-    req.addEventListener("load", test);
+    req.addEventListener("load", displayRandomQuote);
     req.open("GET", "https://thawing-reaches-89541.herokuapp.com/");
     req.send();
 };
 
-function test () {
-    console.log(this.response);
-    displayRandomQuote(this.response);
-}
-
 // Get and array of 40 quotes and display one
-function displayRandomQuote (quotes) {
+function displayRandomQuote () {
+    //console.log(this.response);
+
     // Generate random number between 0 and 39 
     var quoteIndex =  Math.floor(Math.random() * 40); 
     // Get a random quote object from the array
-    var randomQuote = quotes[quoteIndex];
+    var randomQuote = JSON.parse(this.response)[quoteIndex];
 
     // Put the quote text into #quote (replacing loading circle)
     var quoteElementNode = document.getElementById("quote");
