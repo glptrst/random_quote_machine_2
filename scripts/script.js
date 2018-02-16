@@ -20,12 +20,13 @@ window.onload = function () {
 function getQuotes() {
     var req = new XMLHttpRequest();
     req.addEventListener("load", test);
-    req.open("GET", "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&origin=http://null");
+    req.open("GET", "https://thawing-reaches-89541.herokuapp.com/");
     req.send();
 };
 
 function test () {
-    console.log(this);
+    console.log(this.response);
+    displayRandomQuote(this.response);
 }
 
 // Get and array of 40 quotes and display one
