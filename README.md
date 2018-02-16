@@ -1,3 +1,3 @@
 # random_quote_machine -- freecodecamp project
 
-https://glptrst.github.io/random_quote_machine/
+https://glptrst.github.io/random_quote_machine_2/
