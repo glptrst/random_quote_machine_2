@@ -16,7 +16,7 @@ window.onload = function () {
     getQuotes();
 };
 
-// Create, append (and remove) script element to get quotes (JSONP)
+// Send http GET request for quotes to my api (https://github.com/glptrst/random_quote_api)
 function getQuotes() {
     var req = new XMLHttpRequest();
     req.addEventListener("load", displayRandomQuote);
